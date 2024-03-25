@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:paddingHorizontal="@dimen/dp_16"
+        android:paddingVertical="@dimen/dp_8">
+
+        <ImageView
+            android:id="@+id/ivAvatar"
+            android:layout_width="@dimen/dp_48"
+            android:layout_height="@dimen/dp_48"
+            android:src="@drawable/ic_user_default" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_8"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvUserName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/gray_900"
+                android:textSize="@dimen/sp_16"
+                android:textStyle="bold"
+                tools:text="Nguyễn Trọng Luân (Luân bờ rồ)" />
+
+            <TextView
+                android:id="@+id/tvDetailProfile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_2"
+                android:textColor="@color/gray_500"
+                android:textSize="@dimen/sp_14"
+                android:text="@string/friend" />
+
+
+            <TextView
+                android:id="@+id/btnAction"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginVertical="@dimen/dp_8"
+                android:background="@drawable/bg_border_button_orange_8dp"
+                android:gravity="center"
+                android:padding="@dimen/dp_8"
+                tools:text="@string/message1"
+                android:textAllCaps="false"
+                android:visibility="visible"
+                android:textColor="@color/orange_700"
+                android:textSize="@dimen/sp_14"
+                android:textStyle="bold"
+                tools:ignore="ContentDescription" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

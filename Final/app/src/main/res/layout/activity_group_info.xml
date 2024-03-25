@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/llHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            tools:ignore="UselessLeaf">
+
+            <ImageView
+                android:id="@+id/ivBack"
+                android:layout_width="@dimen/dp_32"
+                android:layout_height="@dimen/dp_32"
+                android:layout_gravity="center"
+                android:paddingHorizontal="@dimen/dp_8"
+                android:src="@drawable/ic_back_white"
+                app:tint="@color/black"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:drawablePadding="@dimen/dp_4"
+                android:paddingHorizontal="@dimen/dp_8"
+                android:text="@string/group_info"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_14" />
+
+            <ImageView
+                android:id="@+id/ivActionMore"
+                android:layout_width="@dimen/dp_40"
+                android:layout_height="@dimen/dp_40"
+                android:layout_gravity="center"
+                android:paddingHorizontal="@dimen/dp_8"
+                android:src="@drawable/ic_menu"
+                tools:ignore="ContentDescription" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:background="@color/white"
+            android:paddingHorizontal="@dimen/dp_16">
+
+            <ImageView
+                android:id="@+id/ivAvatarGroup"
+                android:layout_width="@dimen/dp_80"
+                android:layout_height="@dimen/dp_80"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/dp_32"
+                android:contentDescription="@string/description_place_image"
+                android:foreground="@drawable/ic_avatar"
+                android:src="@drawable/ic_user_default" />
+
+            <TextView
+                android:id="@+id/tvNameGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="@dimen/dp_32"
+                android:layout_marginTop="@dimen/dp_8"
+                android:drawablePadding="@dimen/dp_4"
+                android:gravity="center"
+                android:maxLength="40"
+                android:maxLines="2"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_16"
+                tools:ignore="MissingConstraints"
+                tools:text="Tên của group" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_4"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="@dimen/dp_4"
+                    android:text="@string/create_by"
+                    android:textColor="@color/gray_500"
+                    android:textSize="@dimen/sp_14" />
+
+                <TextView
+                    android:id="@+id/GroupOwner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textColor="@color/blue_700"
+                    android:textSize="@dimen/sp_14"
+                    tools:text="Tên người tạo" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/dp_24"
+                android:gravity="start"
+                android:text="@string/join_group_message"
+                android:textColor="@color/gray_900"
+                android:textSize="@dimen/sp_14" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_8"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/dp_4"
+                    android:text="@string/member"
+                    android:textColor="@color/blue_700"
+                    android:textSize="@dimen/sp_14" />
+
+                <TextView
+                    android:id="@+id/tvMemberCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_blue_700_32dp"
+                    android:gravity="center"
+                    android:paddingHorizontal="@dimen/dp_6"
+                    android:paddingVertical="@dimen/dp_2"
+                    android:text="0"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcvListMember"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_8"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="5"
+                tools:listitem="@layout/item_list_user_avatar" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnJoinChat"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_40"
+            android:layout_marginHorizontal="@dimen/dp_48"
+            android:layout_marginBottom="@dimen/dp_8"
+            android:background="@drawable/button_orange_selector"
+            android:gravity="center"
+            android:text="@string/join_chat"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_14"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:id="@+id/llItemChat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:padding="@dimen/dp_8">
+
+        <RelativeLayout
+            android:layout_width="@dimen/dp_60"
+            android:layout_height="@dimen/dp_60"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/dp_8">
+
+            <ImageView
+                android:id="@+id/ivAvatar"
+                android:layout_width="@dimen/dp_60"
+                android:layout_height="@dimen/dp_60"
+                android:layout_centerInParent="true"
+                android:background="@drawable/ic_avatar"
+                android:contentDescription="@string/description_place_image"
+                android:padding="@dimen/dp_4"
+                android:src="@drawable/ic_user_default" />
+
+            <ImageView
+                android:id="@+id/ivOnline"
+                android:layout_width="@dimen/dp_20"
+                android:layout_height="@dimen/dp_20"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="@dimen/dp_8"
+                android:layout_marginTop="@dimen/dp_8"
+                android:layout_marginEnd="@dimen/dp_4"
+                android:src="@drawable/ic_online_selector" />
+
+            <ImageView
+                android:id="@+id/ivKeyMain"
+                android:layout_width="@dimen/dp_12"
+                android:layout_height="@dimen/dp_12"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="@dimen/dp_8"
+                android:layout_marginBottom="@dimen/dp_4"
+                android:background="@drawable/ic_key_main"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/icKeyDeputy"
+                android:layout_width="@dimen/dp_12"
+                android:layout_height="@dimen/dp_12"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="@dimen/dp_8"
+                android:layout_marginBottom="@dimen/dp_4"
+                android:background="@drawable/ic_key_deputy"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/dp_16"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textColor="@color/gray_900"
+                android:textSize="@dimen/sp_16"
+                android:textStyle="bold"
+                tools:text="Tên thành viên" />
+
+            <TextView
+                android:id="@+id/tvPermission"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/dp_4"
+                android:textColor="@color/gray_500"
+                android:textSize="@dimen/sp_14"
+                tools:text="Thành viên" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/ivAddFiend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginEnd="@dimen/dp_16"
+            android:background="@drawable/border_blue_50dp"
+            android:backgroundTint="@color/gray_200"
+            android:contentDescription="@string/description_place_image"
+            android:padding="@dimen/dp_8"
+            android:src="@drawable/ic_work_add_user"
+            android:visibility="gone"
+            app:tint="@color/gray_600" />
+
+    </LinearLayout>
+</layout>

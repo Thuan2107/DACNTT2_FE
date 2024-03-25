@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="@color/bg_choose_vote">
+    <item android:id="@+id/solid">
+        <shape>
+            <gradient
+                android:angle="180"
+                android:endColor="@color/orange_900"
+                android:startColor="@color/orange_700"
+                android:type="linear" />
+            <corners android:radius="@dimen/dp_12" />
+        </shape>
+    </item>
+</ripple>

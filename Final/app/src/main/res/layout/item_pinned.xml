@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:id="@+id/llPinned"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_8"
+        android:background="@drawable/bg_chat_group_left"
+        android:backgroundTint="@color/white"
+        android:orientation="horizontal"
+        android:paddingEnd="@dimen/dp_16"
+        android:visibility="gone"
+        tools:ignore="UselessParent">
+
+        <LinearLayout
+            android:id="@+id/llPinnedView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/dp_12"
+            android:paddingTop="@dimen/dp_12"
+            android:paddingBottom="@dimen/dp_12">
+
+            <ImageView
+                android:id="@+id/ivIconPinned"
+                android:layout_width="@dimen/dp_32"
+                android:layout_height="@dimen/dp_32"
+                android:layout_gravity="center"
+                android:layout_marginEnd="@dimen/dp_8"
+                android:src="@drawable/ic_messenger_pinned" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dp_8"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                tools:ignore="NestedWeights">
+
+                <TextView
+                    android:id="@+id/tvTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    tools:text="aaaa" />
+
+                <TextView
+                    android:id="@+id/tvSubtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_2"
+                    android:includeFontPadding="false"
+                    android:textSize="@dimen/sp_12"
+                    tools:text="Tin nhắn của Kelvin" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/ivThumbImage"
+                android:layout_width="@dimen/dp_32"
+                android:layout_height="@dimen/dp_32"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="@dimen/dp_8"
+                android:scaleType="centerCrop"
+                android:visibility="visible" />
+
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/viewLine"
+            android:layout_width="@dimen/dp_1"
+            android:layout_height="@dimen/dp_48"
+            android:layout_gravity="center"
+            android:background="@color/gray_300" />
+
+        <TextView
+            android:id="@+id/tvPinnedMore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/dp_16"
+            android:background="@drawable/bg_form_input_on"
+            android:backgroundTint="@color/orange_900"
+            android:drawableEnd="@drawable/ic_chevron_down_main"
+            android:drawablePadding="@dimen/dp_4"
+            android:gravity="center"
+            android:paddingStart="@dimen/dp_8"
+            android:paddingTop="@dimen/dp_2"
+            android:paddingEnd="@dimen/dp_8"
+            android:paddingBottom="@dimen/dp_2"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_12"
+            android:visibility="visible"
+            app:drawableTint="@color/white"
+            tools:text="+2" />
+
+        <ImageView
+            android:id="@+id/ivPinnedOne"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/dp_8"
+            android:background="@drawable/bg_expand_pin_board_gray"
+            android:paddingStart="@dimen/dp_8"
+            android:paddingTop="@dimen/dp_2"
+            android:paddingEnd="@dimen/dp_8"
+            android:paddingBottom="@dimen/dp_2"
+            android:src="@drawable/ic_chevron_down_clicked"
+            android:visibility="gone"
+            app:tint="@color/main_bg"
+            tools:ignore="ContentDescription" />
+
+    </LinearLayout>
+
+</layout>

@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:gravity="center"
+        android:layoutAnimation="@anim/layout_from_bottom"
+        tools:layoutAnimation="@null">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:src="@drawable/item_bg_techres"
+            app:tint="@color/gray_300"
+            tools:ignore="ContentDescription" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginHorizontal="@dimen/dp_32"
+                android:layout_marginTop="@dimen/dp_100"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toTopOf="@+id/llBottomView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <LinearLayout
+                    style="@style/EditTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_48"
+                    android:layout_marginTop="@dimen/dp_48"
+                    android:background="@drawable/bg_form_input_6"
+                    android:backgroundTint="@color/white"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/edtPhone"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_form_input_6"
+                        android:backgroundTint="@color/white"
+                        android:hint="@string/phone"
+                        android:inputType="phone"
+                        android:maxLength="11"
+                        android:singleLine="true"
+                        android:textColor="@color/gray_900"
+                        android:textColorHint="@color/gray_400"
+                        android:textSize="@dimen/sp_14" />
+
+                    <ImageButton
+                        android:id="@+id/btnClear"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/ic_clear_input"
+                        android:visibility="gone"
+                        tools:ignore="ContentDescription" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvErrorPhone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_16"
+                    android:layout_marginTop="@dimen/dp_8"
+                    android:text="@string/error_phone"
+                    android:textColor="@color/red_600"
+                    android:textSize="@dimen/sp_12"
+                    android:visibility="gone" />
+
+                <EditText
+                    android:id="@+id/edtPassword"
+                    style="@style/EditTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_48"
+                    android:layout_marginTop="@dimen/dp_8"
+                    android:background="@drawable/bg_form_input_6"
+                    android:backgroundTint="@color/white"
+                    android:hint="@string/password"
+                    android:imeOptions="actionDone"
+                    android:maxLength="20"
+                    android:textColor="@color/gray_900"
+                    android:textColorHint="@color/gray_400"
+                    android:textSize="@dimen/sp_14" />
+
+                <TextView
+                    android:id="@+id/tvErrorPassword"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_16"
+                    android:layout_marginTop="@dimen/dp_8"
+                    android:text="@string/error_password"
+                    android:textColor="@color/red_600"
+                    android:textSize="@dimen/sp_12"
+                    android:visibility="gone" />
+
+                <Button
+                    android:id="@+id/btnLogin"
+                    style="@style/ButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_56"
+                    android:layout_marginTop="@dimen/dp_16"
+                    android:enabled="false"
+                    android:text="@string/login"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="bottom"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llBottomView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/dp_16"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+
+                <TextView
+                    android:id="@+id/txtRegister"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_8"
+                    android:background="@drawable/bg_btn_lvl"
+                    android:backgroundTint="@color/main_bg"
+                    android:paddingHorizontal="@dimen/dp_16"
+                    android:paddingVertical="@dimen/dp_8"
+                    android:text="@string/register"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_16" />
+
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </RelativeLayout>
+
+</layout>

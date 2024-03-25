@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/rootView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#000000">
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/mPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:fitsSystemWindows="true"
+            android:visibility="visible" />
+
+        <LinearLayout
+            android:id="@+id/llOneMedia"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:fitsSystemWindows="true"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:id="@+id/llImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone">
+
+                <include
+                    android:id="@+id/imageView"
+                    layout="@layout/item_image_slider" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/llVideo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone">
+
+                <include
+                    android:id="@+id/videoView"
+                    layout="@layout/item_video" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_40"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:background="@color/transparent"
+            app:contentInsetStart="0dp">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="start"
+                android:paddingStart="@dimen/dp_8"
+                android:paddingEnd="@dimen/dp_8">
+
+                <ImageView
+                    android:id="@+id/ivClose"
+                    android:layout_width="@dimen/dp_24"
+                    android:layout_height="@dimen/dp_24"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="end|center_vertical|center_horizontal|center"
+                    android:layout_marginStart="@dimen/dp_8"
+                    android:layout_marginEnd="@dimen/dp_8"
+                    android:background="@drawable/ripple_animation_button_back_header"
+                    android:scaleType="center"
+                    android:src="@drawable/ic_back_white"
+                    android:visibility="visible" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tvNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textColor="#ffffff"
+                tools:text="1/5" />
+
+            <ImageButton
+                android:id="@+id/ivDownload"
+                android:layout_width="@dimen/dp_24"
+                android:layout_height="@dimen/dp_24"
+                android:layout_centerVertical="true"
+                android:layout_gravity="end|center_vertical|center_horizontal|center"
+                android:layout_marginStart="@dimen/dp_8"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:background="@drawable/ripple_animation_button_back_header"
+                android:scaleType="center"
+                android:src="@drawable/ic_download"
+                android:visibility="visible" />
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ctlContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp_4"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/time"
+            layout="@layout/item_time_header_message" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/ctlMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dp_16"
+            android:layout_marginBottom="@dimen/dp_16"
+            android:orientation="vertical"
+            android:visibility="visible"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="visible"
+                tools:ignore="UselessParent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintRight_toRightOf="parent">
+
+                <RelativeLayout
+                    android:id="@+id/rtlContainerFile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:ignore="UselessParent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintRight_toRightOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/ctlVideo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginBottom="20dp"
+                        android:adjustViewBounds="true"
+                        android:background="@drawable/bg_chat_group_right"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/dp_8">
+
+                        <LinearLayout
+                            android:id="@+id/lnImageOne"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:visibility="visible"
+                            android:paddingEnd="@dimen/dp_16"
+                            app:layout_constraintDimensionRatio="1:1"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/cvImageOne"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bg_chat_group_image"
+                                app:cardCornerRadius="@dimen/dp_8"
+                                app:cardElevation="0dp">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginEnd="@dimen/dp_1"
+                                    android:orientation="horizontal"
+                                    tools:viewBindingIgnore="true">
+
+                                    <ImageView
+                                        android:id="@+id/ivOneOne"
+                                        android:layout_width="@dimen/dp_160"
+                                        android:layout_height="@dimen/dp_160"
+                                        android:adjustViewBounds="true"
+                                        android:maxWidth="@dimen/dp_280"
+                                        android:scaleType="centerCrop"
+                                        tools:ignore="TooDeepLayout"
+                                        tools:src="@drawable/ic_default" />
+                                </RelativeLayout>
+                            </androidx.cardview.widget.CardView>
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/llImageFourMore"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:visibility="gone"
+                            app:layout_constraintDimensionRatio="1:1"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/cvListImage"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:cardBackgroundColor="@color/transparent"
+                                app:cardCornerRadius="@dimen/dp_8"
+                                app:cardElevation="0dp">
+
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/rcvImgMore"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    tools:ignore="RtlHardcoded" />
+                            </androidx.cardview.widget.CardView>
+                        </LinearLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignStart="@+id/ctlVideo"
+                        android:layout_alignBottom="@+id/ctlVideo"
+                        android:layout_marginBottom="-20dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:visibility="visible">
+
+                        <TextView
+                            android:id="@+id/tvTime"
+                            style="@style/ChatTimeStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_vertical"
+                            android:background="@drawable/bg_time_text"
+                            android:paddingStart="@dimen/dp_8"
+                            android:paddingEnd="@dimen/dp_8"
+                            android:textColor="@color/white" />
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/llView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    app:layout_constraintTop_toBottomOf="@+id/rtlContainerFile"
+                    app:layout_constraintRight_toRightOf="parent">
+
+                    <include
+                        android:id="@+id/send"
+                        layout="@layout/item_send_message" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rcvUserView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:visibility="gone"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+                    <LinearLayout
+                        android:id="@+id/llUserView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="end"
+                        android:orientation="horizontal"
+                        android:paddingStart="4dp"
+                        android:visibility="visible"
+                        tools:ignore="RtlSymmetry,UselessParent">
+
+                        <TextView
+                            android:id="@+id/tvMoreView"
+                            style="@style/ChatTimeStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:background="@drawable/bg_user_view"
+                            android:clickable="false"
+                            android:duplicateParentState="true"
+                            android:gravity="center"
+                            android:paddingLeft="@dimen/dp_4"
+                            android:paddingTop="@dimen/dp_1"
+                            android:paddingRight="@dimen/dp_4"
+                            android:paddingBottom="@dimen/dp_1"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/sp_10"
+                            android:visibility="visible" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

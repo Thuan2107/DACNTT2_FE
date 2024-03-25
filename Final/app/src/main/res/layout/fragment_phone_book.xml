@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ui.activity.PhoneBookActivity">
+
+        <LinearLayout
+            android:id="@+id/lnListRequestFriend"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:paddingVertical="@dimen/dp_8">
+            <ImageButton
+                android:id="@+id/ivMessage"
+                android:layout_width="@dimen/dp_32"
+                android:layout_height="@dimen/dp_32"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/dp_8"
+                android:background="@drawable/circle_bg"
+                android:backgroundTint="@color/main_bg"
+                android:src="@drawable/ic_list_friend_request"
+                android:visibility="visible"
+                />
+            <TextView
+                android:id="@+id/appTextViewBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_8"
+                android:gravity="center"
+                android:text="@string/request_friend"
+                android:textColor="@color/black" />
+
+        </LinearLayout>
+
+        <include
+            android:id="@+id/itemRcv"
+            layout="@layout/item_phone_book" />
+
+    </LinearLayout>
+</layout>

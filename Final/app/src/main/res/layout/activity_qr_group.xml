@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.hjq.bar.TitleBar
+            android:id="@+id/tbHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/main_bg"
+            android:elevation="0dp"
+            app:lineVisible="false"
+            app:title="@string/title_code_group" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:background="@color/white"
+            android:paddingHorizontal="@dimen/dp_16">
+
+            <TextView
+                android:id="@+id/tvLink"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/dp_50"
+                android:background="@drawable/bg_form_input_on"
+                android:gravity="center"
+                android:paddingHorizontal="@dimen/dp_16"
+                android:paddingVertical="@dimen/dp_8"
+                android:text="@string/link_group"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_14" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/dp_24"
+                android:gravity="center_horizontal|top">
+
+                <LinearLayout
+                    android:id="@+id/llCopy"
+                    android:layout_width="@dimen/dp_64"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:id="@+id/btnCopy"
+                        android:layout_width="@dimen/dp_64"
+                        android:layout_height="@dimen/dp_64"
+                        android:background="@drawable/border_gray_50dp"
+                        android:contentDescription="@string/description_place_image"
+                        android:src="@drawable/ic_copy"
+                        app:tint="@color/white" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_8"
+                        android:gravity="center"
+                        android:text="@string/copy_code_group"
+                        android:textSize="@dimen/sp_14" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>

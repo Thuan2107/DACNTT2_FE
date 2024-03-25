@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:id="@+id/llHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_54"
+            android:background="@color/white"
+            android:baselineAligned="false"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingTop="@dimen/dp_8"
+            android:paddingBottom="@dimen/dp_8">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_40"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/ibBack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_ripple_animation_button_back"
+                    android:padding="@dimen/dp_8"
+                    android:src="@drawable/ic_back_black" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="@dimen/dp_4"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:layout_width="@dimen/dp_38"
+                        android:layout_height="@dimen/dp_38"
+                        android:layout_gravity="center">
+
+                        <ImageView
+                            android:id="@+id/imgAvatar"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginStart="@dimen/cardview_compat_inset_shadow"
+                            android:layout_marginTop="@dimen/cardview_compat_inset_shadow"
+                            android:layout_marginEnd="@dimen/cardview_compat_inset_shadow"
+                            android:layout_marginBottom="@dimen/cardview_compat_inset_shadow"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/ic_user_default" />
+
+                        <ImageView
+                            android:id="@+id/imvOnline"
+                            android:layout_width="@dimen/dp_12"
+                            android:layout_height="@dimen/dp_12"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentBottom="true"
+                            android:background="@drawable/ic_online"
+                            android:visibility="gone" />
+
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="@dimen/dp_4"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvGroupName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="marquee"
+                            android:maxLines="1"
+                            android:singleLine="true"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/sp_16" />
+
+                        <TextView
+                            android:id="@+id/tvStatus"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/sp_12"
+                            android:visibility="visible" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lnAction"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+
+
+                <ImageButton
+                    android:id="@+id/ibSearch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_8"
+                    android:background="@drawable/circle_orange_900"
+                    android:backgroundTint="@color/gray_300"
+                    android:padding="@dimen/dp_5"
+                    android:src="@drawable/ic_search_white"
+                    android:visibility="visible"
+                    app:tint="@color/gray_600" />
+
+                <ImageButton
+                    android:id="@+id/ibAddMember"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_8"
+                    android:background="@drawable/circle_orange_900"
+                    android:backgroundTint="@color/gray_300"
+                    android:padding="@dimen/dp_5"
+                    android:src="@drawable/ic_add_member_chat"
+                    android:visibility="gone"
+                    app:tint="@color/gray_600" />
+
+                <ImageButton
+                    android:id="@+id/ibMenu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_8"
+                    android:background="@drawable/circle_orange_900"
+                    android:backgroundTint="@color/gray_300"
+                    android:padding="@dimen/dp_5"
+                    android:src="@drawable/ic_menu_chat"
+                    android:visibility="visible"
+                    app:tint="@color/gray_600" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_1"
+            android:background="@color/gray_300" />
+    </LinearLayout>
+</layout>

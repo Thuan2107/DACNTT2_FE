@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            tools:ignore="UselessParent">
+
+            <include
+                android:id="@+id/profileHeader"
+                layout="@layout/item_header_info_customer" />
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/NestedSV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <com.facebook.shimmer.ShimmerFrameLayout
+                        android:id="@+id/sflProfile"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone">
+
+                        <include layout="@layout/item_shimmer_profile" />
+
+                    </com.facebook.shimmer.ShimmerFrameLayout>
+
+                    <LinearLayout
+                        android:id="@+id/lnProfile"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="visible">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:orientation="horizontal"
+                            android:paddingVertical="@dimen/dp_16"
+                            android:paddingStart="@dimen/dp_16"
+                            tools:ignore="DisableBaselineAlignment">
+
+                            <RelativeLayout
+                                android:id="@+id/rltAvatar"
+                                android:layout_width="@dimen/dp_80"
+                                android:layout_height="@dimen/dp_80"
+                                android:gravity="center"
+                                tools:ignore="TooDeepLayout">
+
+                                <ImageView
+                                    android:id="@+id/ivAvatar"
+                                    android:layout_width="@dimen/dp_80"
+                                    android:layout_height="@dimen/dp_80"
+                                    android:layout_centerInParent="true"
+                                    android:src="@drawable/ic_user_default"
+                                    tools:ignore="ContentDescription" />
+
+                                <ImageView
+                                    android:id="@+id/ivBgProfile"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:src="@drawable/ic_avatar"
+                                    android:visibility="visible" />
+                            </RelativeLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="@dimen/dp_8"
+                                android:layout_weight="1"
+                                android:orientation="vertical"
+                                android:paddingTop="@dimen/dp_16"
+                                android:paddingEnd="@dimen/dp_8"
+                                android:paddingBottom="@dimen/dp_16">
+
+                                <TextView
+                                    android:id="@+id/tvNameUser"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:drawableEnd="@drawable/ic_tick"
+                                    android:drawablePadding="@dimen/dp_4"
+                                    android:ellipsize="end"
+                                    android:maxLines="2"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/sp_16"
+                                    tools:text="Nguyễn Minh Thuận" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_vertical"
+                                    android:orientation="horizontal"
+                                    android:paddingVertical="@dimen/dp_8">
+
+                                    <LinearLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="@dimen/dp_32"
+                                        android:layout_marginEnd="@dimen/dp_8"
+                                        android:layout_weight="1"
+                                        android:orientation="horizontal"
+                                        tools:ignore="TooDeepLayout">
+                                        <!--Kết bạn-->
+                                        <LinearLayout
+                                            android:id="@+id/lnMakeFriend"
+                                            android:layout_width="0dp"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:background="@drawable/bg_button_border_32"
+                                            android:gravity="center"
+                                            android:paddingHorizontal="@dimen/dp_4"
+                                            android:paddingVertical="@dimen/dp_8"
+                                            android:visibility="visible"
+                                            tools:ignore="NestedWeights">
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="match_parent"
+                                                android:backgroundTint="@color/white"
+                                                android:drawableStart="@drawable/ic_work_add_user"
+                                                android:drawablePadding="@dimen/dp_4"
+                                                android:drawableTint="@color/main_bg"
+                                                android:gravity="center"
+                                                android:text="@string/add_friend"
+                                                android:textColor="@color/main_bg"
+                                                android:textSize="@dimen/sp_12" />
+
+                                        </LinearLayout>
+                                        <!--Bạn bè-->
+                                        <LinearLayout
+                                            android:id="@+id/llFriend"
+                                            android:layout_width="0dp"
+                                            android:layout_height="match_parent"
+                                            android:layout_gravity="bottom"
+                                            android:layout_weight="1"
+                                            android:background="@drawable/bg_button_border_32"
+                                            android:gravity="center"
+                                            android:paddingHorizontal="@dimen/dp_4"
+                                            android:paddingVertical="@dimen/dp_8"
+                                            android:visibility="gone">
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="match_parent"
+                                                android:drawableStart="@drawable/ic_friend_user"
+                                                android:drawablePadding="@dimen/dp_4"
+                                                android:gravity="center"
+                                                android:paddingEnd="@dimen/dp_4"
+                                                android:text="@string/friend"
+                                                android:textColor="@color/main_bg"
+                                                android:textSize="@dimen/sp_12" />
+
+                                        </LinearLayout>
+                                        <!--Phản hồi-->
+                                        <LinearLayout
+                                            android:id="@+id/llFeedBack"
+                                            android:layout_width="0dp"
+                                            android:layout_height="match_parent"
+                                            android:layout_gravity="bottom"
+                                            android:layout_weight="1"
+                                            android:background="@drawable/bg_button_border_32"
+                                            android:gravity="center"
+                                            android:paddingHorizontal="@dimen/dp_4"
+                                            android:paddingVertical="@dimen/dp_8"
+                                            android:visibility="gone">
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="match_parent"
+                                                android:layout_gravity="center"
+                                                android:drawableStart="@drawable/ic_waiting_confirm_friend"
+                                                android:drawablePadding="@dimen/dp_4"
+                                                android:drawableTint="@color/main_bg"
+                                                android:gravity="center"
+                                                android:paddingEnd="@dimen/dp_4"
+                                                android:text="@string/feedback"
+                                                android:textColor="@color/main_bg"
+                                                android:textSize="@dimen/sp_12" />
+
+                                        </LinearLayout>
+                                        <!--Thu hồi-->
+                                        <LinearLayout
+                                            android:id="@+id/llRecall"
+                                            android:layout_width="0dp"
+                                            android:layout_height="match_parent"
+                                            android:layout_gravity="bottom"
+                                            android:layout_weight="1"
+                                            android:background="@drawable/bg_button_border_32"
+                                            android:gravity="center"
+                                            android:paddingHorizontal="@dimen/dp_4"
+                                            android:paddingVertical="@dimen/dp_8"
+                                            android:visibility="gone">
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="match_parent"
+                                                android:layout_gravity="center"
+                                                android:drawableStart="@drawable/ic_waiting_response_friend"
+                                                android:drawablePadding="@dimen/dp_4"
+                                                android:drawableTint="@color/main_bg"
+                                                android:gravity="center"
+                                                android:paddingEnd="@dimen/dp_4"
+                                                android:text="@string/recall"
+                                                android:textColor="@color/main_bg"
+                                                android:textSize="@dimen/sp_12" />
+
+                                        </LinearLayout>
+                                        <!--Trò chuyện-->
+                                        <LinearLayout
+                                            android:id="@+id/lnMessage"
+                                            android:layout_width="0dp"
+                                            android:layout_height="match_parent"
+                                            android:layout_marginStart="@dimen/dp_8"
+                                            android:layout_weight="1"
+                                            android:background="@drawable/border_orange_50dp"
+                                            android:backgroundTint="@color/gray_300"
+                                            android:gravity="center"
+                                            android:paddingHorizontal="@dimen/dp_4"
+                                            android:paddingVertical="@dimen/dp_8">
+
+                                            <TextView
+                                                android:id="@+id/tvValue"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="match_parent"
+                                                android:layout_gravity="center"
+                                                android:drawableStart="@drawable/ic_message_profile"
+                                                android:drawablePadding="@dimen/dp_4"
+                                                android:gravity="center"
+                                                android:text="@string/chat"
+                                                android:textColor="@color/gray_600"
+                                                android:textSize="@dimen/sp_12"
+                                                app:drawableTint="@color/gray_600" />
+
+                                        </LinearLayout>
+
+                                    </LinearLayout>
+
+                                    <ImageButton
+                                        android:id="@+id/ivBtnMore"
+                                        android:layout_width="@dimen/dp_32"
+                                        android:layout_height="@dimen/dp_32"
+                                        android:layout_gravity="bottom"
+                                        android:visibility="gone"
+                                        android:background="@drawable/ic_more" />
+
+                                </LinearLayout>
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <include
+                            android:id="@+id/profileInfo"
+                            layout="@layout/item_info_customer" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/llNewsFeed"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_300"
+                        android:background="@color/white"
+                        android:orientation="vertical"
+                        android:visibility="visible">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/dp_16"
+                            android:background="@color/white">
+
+                            <TextView
+                                android:id="@+id/tvNewsFeed"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/tvWork"
+                                android:textAllCaps="true"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/sp_16" />
+
+                            <TextView
+                                android:id="@+id/tvUser"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/sp_16" />
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+
+        </LinearLayout>
+
+
+</layout>

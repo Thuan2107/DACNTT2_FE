@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:id="@+id/llClick"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcvChat"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                android:descendantFocusability="afterDescendants"
+                android:divider="@null"
+                android:dividerHeight="0dp"
+                android:listSelector="@android:color/transparent"
+                android:paddingTop="@dimen/dp_8"
+                android:paddingBottom="@dimen/dp_8"
+                android:scrollbars="vertical"
+                tools:listitem="@layout/item_message_text_left"
+                android:transcriptMode="normal"
+                android:visibility="visible"
+                app:reverseLayout="true"
+                app:stackFromEnd="true" />
+
+        </LinearLayout>
+
+
+        <include
+            android:id="@+id/pinned"
+            layout="@layout/item_pinned" />
+
+        <LinearLayout
+            android:id="@+id/lnTyping"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_24"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="@dimen/dp_8"
+            android:layout_marginBottom="@dimen/dp_8"
+            android:background="@drawable/bg_user_typing"
+            android:gravity="center_vertical"
+            android:layoutAnimation="@anim/layout_fall_down"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcvTypingOn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_4"
+                tools:itemCount="3"
+                tools:listitem="@layout/item_typing_on" />
+            <com.github.ybq.android.spinkit.SpinKitView
+                android:id="@+id/spin_kit"
+                style="@style/SpinKitView.Small.ThreeBounce"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/dp_8"
+                android:paddingEnd="@dimen/dp_8"
+                app:SpinKit_Color="@color/main_bg" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/scrollMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="@dimen/dp_8"
+            android:layout_marginBottom="@dimen/dp_8"
+            android:src="@drawable/ic_jump_last"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+</layout>

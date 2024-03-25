@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/llTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/dp_8"
+            android:paddingBottom="@dimen/dp_8"
+            tools:ignore="UselessParent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/ivExitEditProfile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/dp_16"
+                    android:contentDescription="@string/description_place_image"
+                    android:src="@drawable/icon_exit"
+                    android:tint="@color/black"
+                    tools:ignore="UseAppTint" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/dp_8"
+                    android:layout_weight="1"
+                    android:text="@string/edit_info"
+                    android:textAllCaps="true"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+                <com.hjq.shape.view.ShapeButton
+                    android:id="@+id/btnSave"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dp_32"
+                    android:layout_gravity="end|center_vertical"
+                    android:layout_marginEnd="@dimen/dp_16"
+                    android:background="@drawable/item_selector_bg_save_btn_profile"
+                    android:drawableStart="@drawable/item_selector_ic_check"
+                    android:gravity="center"
+                    android:padding="@dimen/dp_10"
+                    android:drawablePadding="@dimen/dp_4"
+                    android:text="@string/save"
+                    android:textAllCaps="true"
+                    android:textColor="@color/gray_600"
+                    android:textSize="@dimen/sp_12"
+                    android:textStyle="bold"
+                    app:shape_textSelectedColor="#FF8B00"
+                    tools:ignore="ContentDescription" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_1"
+            android:background="@color/gray_300" />
+    </LinearLayout>
+</layout>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:ignore="MissingClass">
+        <LinearLayout
+            android:id="@+id/lnHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/main_bg"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            tools:ignore="UselessParent">
+            <TextView
+                android:id="@+id/tvSearchViewForChat"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_28"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/dp_8"
+                android:layout_marginTop="@dimen/dp_16"
+                android:layout_marginBottom="@dimen/dp_12"
+                android:background="@drawable/bg_form_search"
+                android:drawableStart="@drawable/ic_search"
+                android:drawablePadding="@dimen/dp_8"
+                android:drawableTint="@color/gray_600"
+                android:gravity="center_vertical"
+                android:hint="Tìm kiếm ..."
+                android:paddingHorizontal="@dimen/dp_8"
+                android:textColor="@color/gray_600"
+                android:textColorHint="@color/gray_300"
+                android:textSize="@dimen/sp_14"
+                android:visibility="visible" />
+            <ImageButton
+                android:id="@+id/createGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dp_8"
+                android:layout_marginTop="@dimen/dp_4"
+                android:background="@drawable/circle_orange_900"
+                android:backgroundTint="@color/gray_300"
+                android:contentDescription="@string/description_place_image"
+                android:padding="@dimen/dp_5"
+                android:src="@drawable/ic_add_member_chat"
+                android:visibility="visible"
+                app:tint="@color/gray_600" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <com.example.chatapplication.layout.NoScrollViewPager
+                android:id="@+id/nsvPager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:paddingBottom="@dimen/dp_64" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewNavigation"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_64"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/bg_navigation"
+                android:elevation="@dimen/dp_8"
+                tools:itemCount="5"
+                tools:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                tools:listitem="@layout/home_navigation_item"
+                tools:spanCount="5" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</layout>

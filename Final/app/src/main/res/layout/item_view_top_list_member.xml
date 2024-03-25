@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/llHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:baselineAligned="false"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingVertical="@dimen/dp_8">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/ibBack"
+                    android:layout_width="@dimen/dp_32"
+                    android:layout_height="@dimen/dp_32"
+                    android:background="@drawable/bg_ripple_animation_button_back"
+                    android:contentDescription="@string/description_place_image"
+                    android:padding="@dimen/dp_8"
+                    android:src="@drawable/ic_back_black" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="@dimen/dp_16"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvGroupName"
+                        style="@style/AutoTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/sp_16"
+                        tools:text="Tên Nhóm" />
+
+                    <TextView
+                        android:id="@+id/tvStatus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/sp_12"
+                        tools:text="10 thành viên" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llGroupChat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/gray_100"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/llHeaderTops"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                tools:ignore="UselessParent">
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/bg_header_scrollView"
+                    android:scrollbars="none">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.SearchView
+                            android:id="@+id/svFriend"
+                            android:layout_width="@dimen/dp_192"
+                            android:layout_height="@dimen/dp_32"
+                            android:layout_margin="@dimen/dp_8"
+                            android:background="@drawable/bg_search"
+                            android:gravity="center_vertical"
+                            android:theme="@style/SearchView"
+                            app:closeIcon="@drawable/close_icon"
+                            app:iconifiedByDefault="false"
+                            app:queryBackground="@android:color/transparent"
+                            app:queryHint="@string/search"
+                            app:searchIcon="@drawable/ic_search" />
+
+                        <TextView
+                            android:id="@+id/tvSuggest"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/dp_32"
+                            android:layout_margin="@dimen/dp_8"
+                            android:background="@drawable/bg_search"
+                            android:drawablePadding="@dimen/dp_4"
+                            android:paddingStart="@dimen/dp_8"
+                            android:paddingTop="@dimen/dp_8"
+                            android:paddingEnd="@dimen/dp_8"
+                            android:paddingBottom="@dimen/dp_8"
+                            android:text="@string/suggest"
+                            android:textColor="@color/main_bg"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/tvLately"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/dp_32"
+                            android:layout_margin="@dimen/dp_8"
+                            android:background="@drawable/bg_form_input_on"
+                            android:drawablePadding="@dimen/dp_4"
+                            android:paddingStart="@dimen/dp_8"
+                            android:paddingTop="@dimen/dp_8"
+                            android:paddingEnd="@dimen/dp_8"
+                            android:paddingBottom="@dimen/dp_8"
+                            android:text="@string/all"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/tvPhoneBook"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/dp_32"
+                            android:layout_margin="@dimen/dp_8"
+                            android:background="@drawable/bg_search"
+                            android:drawablePadding="@dimen/dp_4"
+                            android:paddingStart="@dimen/dp_8"
+                            android:paddingTop="@dimen/dp_8"
+                            android:paddingEnd="@dimen/dp_8"
+                            android:paddingBottom="@dimen/dp_8"
+                            android:text="@string/invited"
+                            android:textColor="@color/main_bg" />
+
+                    </LinearLayout>
+
+                </HorizontalScrollView>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_1"
+                    android:background="@color/gray_300" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_1"
+            android:background="@color/gray_100" />
+
+    </LinearLayout>
+
+</layout>
